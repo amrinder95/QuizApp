@@ -1,3 +1,4 @@
+// server.js
 // load .env data into process.env
 require('dotenv').config();
 
@@ -26,19 +27,18 @@ app.use(
 );
 app.use(express.static('public'));
 
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
-const usersRoutes = require('./routes/users');
+// check for testing before using database and seperate routes
+// bash usage: $env:NODE_ENV = "testing" & echo $env:NODE_ENV
+if (process.env.NODE_ENV !== 'testing') {
 
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
-// Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
-app.use('/users', usersRoutes);
-// Note: mount other resources here, using the same pattern above
+  const userApiRoutes = require('./routes/users-api');
+  const widgetApiRoutes = require('./routes/widgets-api');
+  const usersRoutes = require('./routes/users');
+
+  app.use('/api/users', userApiRoutes);
+  app.use('/api/widgets', widgetApiRoutes);
+  app.use('/users', usersRoutes);
+}
 
 // Home page
 // Warning: avoid creating more routes in this file!
@@ -48,6 +48,12 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/users', (req, res) => {
+  res.render('users');
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+console.log('\x1b[32mFor testing without database: $env:NODE_ENV = "testing" & echo $env:NODE_ENV\x1b[0m');
