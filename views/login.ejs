@@ -20,7 +20,21 @@
 </head>
 
 <body>
-  <h1>Login</h1>
+  <main>
+    <h2>Login</h2>
+    <form method="POST" action="/login">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</main>
+
 </body>
 
 </html>
