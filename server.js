@@ -5,6 +5,7 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const answers = require('./db/queries/answers')
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -31,6 +32,7 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const { createQuestion } = require('./db/queries/questions');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
