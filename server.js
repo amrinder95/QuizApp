@@ -35,12 +35,15 @@ if (process.env.NODE_ENV !== 'testing') {
   const widgetApiRoutes = require('./routes/widgets-api');
   const usersRoutes = require('./routes/users');
   const registerRoutes = require('./routes/register.js');
+  const loginRoutes = require('./routes/login.js');
+  const createQuizRoutes = require('./routes/create-quiz');
 
-  
   app.use('/api/users', userApiRoutes);
   app.use('/api/widgets', widgetApiRoutes);
   app.use('/users', usersRoutes);
   app.use('/register', registerRoutes);
+  app.use('/login', loginRoutes);
+  app.use('/create-quiz', createQuizRoutes);
 }
 
 // Home page
@@ -53,15 +56,6 @@ app.get('/', (req, res) => {
 
 app.get('/users', (req, res) => {
   res.render('users');
-});
-
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.get('/create-quiz', (req, res) => {
-  res.render('create-quiz');
 });
 
 app.listen(PORT, () => {
