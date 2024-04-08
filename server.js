@@ -1,3 +1,4 @@
+// server.js
 // load .env data into process.env
 require('dotenv').config();
 
@@ -27,20 +28,35 @@ app.use(
 );
 app.use(express.static('public'));
 
+<<<<<<< HEAD
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const { createQuestion } = require('./db/queries/questions');
+=======
+// check for testing before using database and seperate routes
+// bash usage: $env:NODE_ENV = "testing" & echo $env:NODE_ENV
+if (process.env.NODE_ENV !== 'testing') {
+>>>>>>> origin/merge
 
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
-// Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
-app.use('/users', usersRoutes);
-// Note: mount other resources here, using the same pattern above
+  const userApiRoutes = require('./routes/users-api');
+  const widgetApiRoutes = require('./routes/widgets-api');
+  const usersRoutes = require('./routes/users');
+  const registerRoutes = require('./routes/register.js');
+  const loginRoutes = require('./routes/login.js');
+  const createQuizRoutes = require('./routes/create-quiz');
+  const quizzesApiRoutes = require('./routes/quizzes-api');
+
+  app.use('/api/users', userApiRoutes);
+  app.use('/api/widgets', widgetApiRoutes);
+  app.use('/users', usersRoutes);
+  app.use('/register', registerRoutes);
+  app.use('/login', loginRoutes);
+  app.use('/create-quiz', createQuizRoutes);
+  app.use('/api/quizzes', quizzesApiRoutes);
+}
 
 // Home page
 // Warning: avoid creating more routes in this file!
@@ -50,6 +66,12 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/users', (req, res) => {
+  res.render('users');
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+console.log('\x1b[32mFor testing without database: $env:NODE_ENV = "testing" & echo $env:NODE_ENV\x1b[0m');

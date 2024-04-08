@@ -1,3 +1,4 @@
+// public/scripts/users.js
 // Client facing scripts here
 $(() => {
   $('#fetch-users').on('click', () => {

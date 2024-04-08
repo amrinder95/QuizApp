@@ -11,6 +11,12 @@ const dbParams = {
 
 const db = new Pool(dbParams);
 
-db.connect();
+db.connect((err, client, release) => {
+  if (err) {
+    console.error('Error connecting to PostgreSQL database:', err.message);
+  } else {
+    console.log('Connected to PostgreSQL database:', dbParams.database);
+  }
+});
 
 module.exports = db;

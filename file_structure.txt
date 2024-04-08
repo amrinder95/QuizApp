@@ -1,0 +1,62 @@
+.
+├── README.md
+├── bin
+│   └── resetdb.js
+├── db
+│   ├── connection.js
+│   ├── queries
+│   │   └── users.js
+│   ├── schema
+│   │   ├── 01_users.sql
+│   │   ├── 02_quizzes.sql
+│   │   ├── 03_questions.sql
+│   │   ├── 04_attempts.sql
+│   │   ├── 05_answers.sql
+│   │   └── 06_results.sql
+│   └── seeds
+│       ├── 01_users.sql
+│       ├── 02_quizzes.sql
+│       ├── 03_questions.sql
+│       ├── 04_attempts.sql
+│       ├── 05_answers.sql
+│       └── 06_results.sql
+├── file_structure.txt
+├── lib
+│   └── sass-middleware.js
+├── package-lock.json
+├── package.json
+├── public
+│   ├── scripts
+│   │   ├── app.js
+│   │   └── users.js
+│   ├── styles
+│   │   ├── header.css
+│   │   ├── layout.css
+│   │   └── main.css
+│   └── vendor
+│       ├── border-box.css
+│       ├── jquery-3.0.0.js
+│       └── normalize-4.1.1.css
+├── routes
+│   ├── create-quiz.js
+│   ├── login.js
+│   ├── quizzes-api.js
+│   ├── register.js
+│   ├── users-api.js
+│   ├── users.js
+│   └── widgets-api.js
+├── server.js
+├── styles
+│   ├── header.scss
+│   ├── layout.scss
+│   └── main.scss
+└── views
+    ├── create-quiz.ejs
+    ├── index.ejs
+    ├── login.ejs
+    ├── partials
+    │   └── _header.ejs
+    ├── register.ejs
+    └── users.ejs
+
+14 directories, 45 files
