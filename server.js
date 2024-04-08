@@ -28,18 +28,9 @@ app.use(
 );
 app.use(express.static('public'));
 
-<<<<<<< HEAD
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
-const usersRoutes = require('./routes/users');
-const { createQuestion } = require('./db/queries/questions');
-=======
 // check for testing before using database and seperate routes
 // bash usage: $env:NODE_ENV = "testing" & echo $env:NODE_ENV
 if (process.env.NODE_ENV !== 'testing') {
->>>>>>> origin/merge
 
   const userApiRoutes = require('./routes/users-api');
   const widgetApiRoutes = require('./routes/widgets-api');
