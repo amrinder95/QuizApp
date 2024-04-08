@@ -1,0 +1,12 @@
+INSERT INTO attempts (quiz_id, user_id) VALUES (1, 2);
+INSERT INTO attempts (quiz_id, user_id) VALUES (2, 3);
+INSERT INTO attempts (quiz_id, user_id) VALUES (3, 1);
+INSERT INTO attempts (quiz_id, user_id) VALUES (4, 3);
+INSERT INTO attempts (quiz_id, user_id) VALUES (5, 3);
+INSERT INTO attempts (quiz_id, user_id) VALUES (6, 1);
+INSERT INTO attempts (quiz_id, user_id) VALUES (7, 2);
+INSERT INTO attempts (quiz_id, user_id) VALUES (8, 1);
+INSERT INTO attempts (quiz_id, user_id) VALUES (9, 2);
+INSERT INTO attempts (quiz_id, user_id) VALUES (10, 3);
+INSERT INTO attempts (quiz_id, user_id) VALUES (11, 1);
+INSERT INTO attempts (quiz_id, user_id) VALUES (12, 2);

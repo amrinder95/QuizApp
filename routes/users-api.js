@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
   userQueries.getUsers()
     .then(users => {
       res.json({ users });
+
     })
     .catch(err => {
       res
