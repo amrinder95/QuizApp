@@ -1,0 +1,12 @@
+INSERT INTO quizzes (user_id, title) VALUES (1, 'Introduction to Python');
+INSERT INTO quizzes (user_id, title) VALUES (2, 'History Trivia Challenge');
+INSERT INTO quizzes (user_id, title) VALUES (3, 'Mathematics Quiz: Algebra Basics');
+INSERT INTO quizzes (user_id, title) VALUES (1, 'Geography Quiz: World Capitals');
+INSERT INTO quizzes (user_id, title) VALUES (2, 'Literature Quiz: Famous Authors');
+INSERT INTO quizzes (user_id, title) VALUES (3, 'Science Quiz: Biology Fundamentals');
+INSERT INTO quizzes (user_id, title) VALUES (1, 'Movie Buff Trivia');
+INSERT INTO quizzes (user_id, title) VALUES (2, 'Music Knowledge Quiz');
+INSERT INTO quizzes (user_id, title) VALUES (3, 'Art History Quiz: Renaissance Era');
+INSERT INTO quizzes (user_id, title) VALUES (1, 'Sports Trivia Challenge');
+INSERT INTO quizzes (user_id, title) VALUES (2, 'Culinary Quiz: Cooking Techniques');
+INSERT INTO quizzes (user_id, title) VALUES (3, 'Technology Quiz: Gadgets and Gizmos');
