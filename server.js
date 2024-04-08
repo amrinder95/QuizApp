@@ -34,10 +34,13 @@ if (process.env.NODE_ENV !== 'testing') {
   const userApiRoutes = require('./routes/users-api');
   const widgetApiRoutes = require('./routes/widgets-api');
   const usersRoutes = require('./routes/users');
+  const registerRoutes = require('./routes/register.js');
 
+  
   app.use('/api/users', userApiRoutes);
   app.use('/api/widgets', widgetApiRoutes);
   app.use('/users', usersRoutes);
+  app.use('/register', registerRoutes);
 }
 
 // Home page
@@ -55,10 +58,6 @@ app.get('/users', (req, res) => {
 
 app.get('/login', (req, res) => {
   res.render('login');
-});
-
-app.get('/register', (req, res) => {
-  res.render('register');
 });
 
 app.get('/create-quiz', (req, res) => {
