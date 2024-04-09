@@ -26,14 +26,14 @@ router.post("/", async (req, res) => {
       const answer = answersList[i];
       await questions.createQuestion(quizId, question, answer);
     }
-    res.render("users");
+    res.render("index");
   } catch (error) {
     console.log(error.message);
   }
 });
 
 router.get("/", (req, res) => {
-  res.render("users");
+  res.render("index");
 });
 
 module.exports = router;
