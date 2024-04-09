@@ -7,17 +7,33 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 const answers = require('./db/queries/answers')
+const bodyParser = require('body-parser');
+const path = require('path');
+const session = require('express-session');
+
+
+
 
 const PORT = process.env.PORT || 8080;
 const app = express();
 
+// parse request bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.set('view engine', 'ejs');
 
-// Load the logger first so all (static) HTTP requests are logged to STDOUT
-// 'dev' = Concise output colored by response status for development use.
-//         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
-app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(bodyParser.json());
+
+app.use(session({
+  secret: 'quizzy',
+  resave: false,
+  saveUninitialized: false
+}));
+
 app.use(
   '/styles',
   sassMiddleware({
@@ -27,7 +43,7 @@ app.use(
   })
 );
 app.use(express.static('public'));
-
+app.use(bodyParser.json());
 // check for testing before using database and seperate routes
 // bash usage: $env:NODE_ENV = "testing" & echo $env:NODE_ENV
 if (process.env.NODE_ENV !== 'testing') {

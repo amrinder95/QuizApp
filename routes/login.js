@@ -1,10 +1,10 @@
 // routes/login.js
 const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const usersQueries = require("../db/queries/users")
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   res.render("login");
 });
 
