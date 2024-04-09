@@ -30,7 +30,8 @@ router.post('/', async (req, res) =>{
   } catch (error) {
     console.log(error.message);
   }
-})
+});
+
 router.get('/', (req, res) => {
   res.render('users');
 });
