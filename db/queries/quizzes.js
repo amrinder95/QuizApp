@@ -53,4 +53,14 @@ const hideQuiz = (title) => {
   })
 }
 
-module.exports = { createQuiz, getQuizzes, getQuizzesByTitle, getQuizzesByUser, hideQuiz };
+const quizIdByTitle = (title) => {
+  return db.query('SELECT id FROM quizzes WHERE title = $1', [title])
+  .then((data) => {
+    return data.rows[0].id;
+  })
+  .catch((err) => {
+    console.log(err.message);
+  })
+}
+
+module.exports = { createQuiz, getQuizzes, getQuizzesByTitle, getQuizzesByUser, hideQuiz, quizIdByTitle };
