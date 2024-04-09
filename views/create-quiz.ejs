@@ -24,8 +24,10 @@
   <div id="new-quiz-form">
     <form action="/create-quiz" method="POST" class="quiz-questions"> <!--Posts to user for now i'll set a route and logic for public vs private quizzes-->
       <input type="hidden" name="username" value="<%= username %>" /> <!--store username here, TODO session cookies-->
+
     <label for="quiz-title" class="quiz-title">Quiz title:</label>
     <input type="text" id="quiz-title" name="quiz-title"><br>
+
       <div id="questions-container">
         <label for="question" class="question-title">Question:</label>
         <input type="text" name="question"><br>
@@ -45,7 +47,10 @@
           <option value="D">D</option>
         </select>
       </div>
+    
+
       <button type="button" id="add-question-btn">Add another question</button>
+
       <button type="submit">Submit!</button>
     </form>
   </div>
