@@ -1,10 +1,13 @@
 .
 ├── README.md
-├── bin
-│   └── resetdb.js
 ├── db
 │   ├── connection.js
 │   ├── queries
+│   │   ├── answers.js
+│   │   ├── attempts.js
+│   │   ├── questions.js
+│   │   ├── quizzes.js
+│   │   ├── results.js
 │   │   └── users.js
 │   ├── schema
 │   │   ├── 01_users.sql
@@ -20,7 +23,6 @@
 │       ├── 04_attempts.sql
 │       ├── 05_answers.sql
 │       └── 06_results.sql
-├── file_structure.txt
 ├── lib
 │   └── sass-middleware.js
 ├── package-lock.json
@@ -37,6 +39,7 @@
 │       ├── border-box.css
 │       ├── jquery-3.0.0.js
 │       └── normalize-4.1.1.css
+├── resetdb.js
 ├── routes
 │   ├── create-quiz.js
 │   ├── login.js
@@ -50,6 +53,7 @@
 │   ├── header.scss
 │   ├── layout.scss
 │   └── main.scss
+├── tree_output.txt
 └── views
     ├── create-quiz.ejs
     ├── index.ejs
@@ -59,4 +63,4 @@
     ├── register.ejs
     └── users.ejs
 
-14 directories, 45 files
+13 directories, 50 files

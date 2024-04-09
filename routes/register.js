@@ -9,8 +9,8 @@ router.get("/", (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const { username, email, password } = req.body; // password will show up as email in database
-    const newUser = await usersQueries.createUser(username, email, password);
+    const { username, password } = req.body; 
+    const newUser = await usersQueries.createUser(username, password);
     console.log("New user:", newUser); // for testing REMOVE LATER
     res.redirect("/login");
   } catch (error) {

@@ -1,3 +1,4 @@
+// db/queries/users.js
 const db = require('../connection');
 
 const createUser = (username, password) => {

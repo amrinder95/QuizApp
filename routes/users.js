@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
   console.log(req.body);
   const title = req.body["quiz-title"];
   try {
-    // users.getUserIdByUsername(username); // use when login is setup
+    users.getUserIdByUsername(username); // use when login is setup
     await quizzes.createQuiz(1, title); //for now hardcoding in userid
     const quizId = await quizzes.quizIdByTitle(title);
     const questionsList = req.body["question"];
