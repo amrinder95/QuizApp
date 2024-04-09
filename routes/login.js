@@ -1,6 +1,7 @@
 // routes/login.js
 const express = require("express");
 const router = express.Router();
+const bcrypt = require('bcrypt');
 const usersQueries = require("../db/queries/users")
 
 router.get("/", (req, res) => {
@@ -13,9 +14,14 @@ router.post("/", async (req, res) => {
   try {
     const [user] = await usersQueries.getUserIdByUsername(username);
 
-    if (!user || user.password !== password) {
-      return res.render("login",
-       { error: "Invalid username or password"});
+    if (!user) {
+      return res.render("login", { error: "Invalid username or password"});
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if (!passwordMatch) {
+      return res.render("login", {error: "Invalid username or password"});
     }
 
     req.session.userId = user.id;
