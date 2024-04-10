@@ -12,7 +12,9 @@ const quizzes = require("../db/queries/quizzes");
 const questions = require("../db/queries/questions");
 const users = require("../db/queries/users");
 
+
 router.post("/", async (req, res) => {
+  const username = req.body.username;
   console.log(req.body);
   const title = req.body["quiz-title"];
   try {
