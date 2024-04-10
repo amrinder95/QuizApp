@@ -3,5 +3,6 @@ CREATE TABLE quizzes (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   title VARCHAR(255) NOT NULL,
-  is_public BOOLEAN DEFAULT true
+  is_public BOOLEAN DEFAULT true,
+  unique_id VARCHAR(255) NOT NULL
 );

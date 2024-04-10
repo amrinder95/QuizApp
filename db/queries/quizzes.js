@@ -1,7 +1,7 @@
 const db = require('../connection');
 
-const createQuiz =  (user_id, title) => {
-  return db.query('INSERT INTO quizzes (user_id,title) VALUES ($1, $2) RETURNING *', [user_id, title])
+const createQuiz =  (user_id, title, unique_id) => {
+  return db.query('INSERT INTO quizzes (user_id, title, unique_id) VALUES ($1, $2, $3) RETURNING *', [user_id, title, unique_id])
   .then((data) => {
     return data.rows;
   })
