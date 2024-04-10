@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+  <%- include('partials/_header') %>
   <title>Users</title>
 
   <meta charset="UTF-8" >
@@ -19,9 +20,17 @@
 </head>
 
 <body>
-  <h1>Users</h1>
-  <button id="fetch-users">Fetch Users via AJAX</button>
-  <ul id="users"></ul>
+  <h1>Your quizzes and attempts</h1>
+  <div class="your-quizzes">
+    <div class="quiz-info">
+      <h3>My quizzes:</h3>
+      <ul id="myquizzes"></ul>
+    </div>
+  </div>
+  <div>
+    <h3>My attempts:</h3>
+    <ul id="attempts"></ul>
+  </div>
 </body>
 
 </html>
