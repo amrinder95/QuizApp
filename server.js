@@ -65,6 +65,7 @@ if (process.env.NODE_ENV !== "testing") {
   app.use("/login", loginRoutes);
   app.use("/create-quiz", createQuizRoutes);
   app.use("/api/quizzes", quizzesApiRoutes);
+  app.use('/', quizRoutes);
   app.use("/api/myquizzes", myquizzesApiRoutes);
 }
 
