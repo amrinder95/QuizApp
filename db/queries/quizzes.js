@@ -31,10 +31,9 @@ const getQuizzesByTitle = (title) => {
   })
 }
 
-const getQuizzesByUser = (userid) => {
-  return db.query('SELECT * FROM quizzes WHERE user_id = $1', [userid])
+const getQuizzesByUser = (user_id) => {
+  return db.query(`SELECT * FROM quizzes WHERE user_id = $1`, [user_id])
   .then((data) => {
-    console.log(data.rows);
     return data.rows;
   })
   .catch((err) => {
