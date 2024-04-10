@@ -37,7 +37,9 @@ router.post("/", async (req, res) => {
       await questions.createQuestion(quizId, question[i], correctAnswers[i]);
     }
 
-    res.render("index");
+    const allQuizzes = await quizzes.getQuizzes();
+    
+    res.render("index", { quizzes: allQuizzes});
   } catch (error) {
     console.error("Error creating quiz:", error);
     res.status(500).send("Internal Server Error!");

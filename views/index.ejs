@@ -21,7 +21,13 @@
 <body>
   <h1>Home</h1>
   <h2>Public Quizzes</h2>
-  <div id="quiz-container"></div> <!-- Container to display quizzes -->
+  <div id="quiz-container"> <!-- Container to display quizzes -->
+  <% quizzes.forEach((quiz) => { %>
+    <div>
+      <a href="/quiz/<%= quiz.id %>"><%= quiz.title %></a>
+    </div>
+    <% }); %>
+  </div>
   <script defer src="/scripts/app.js"></script>
 </body>
 

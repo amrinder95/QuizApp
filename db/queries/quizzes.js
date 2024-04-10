@@ -63,4 +63,15 @@ const quizIdByTitle = (title) => {
   })
 }
 
-module.exports = { createQuiz, getQuizzes, getQuizzesByTitle, getQuizzesByUser, hideQuiz, quizIdByTitle };
+const getQuizById = (quizId) => {
+  return db.query('SELECT * FROM quizzes WHERE id = $1', [quizId])
+      .then((data) => {
+          return data.rows[0];
+      })
+      .catch((err) => {
+          console.error('Error fetching quiz by ID:', err);
+          throw err;
+      });
+};
+
+module.exports = { createQuiz, getQuizzes, getQuizzesByTitle, getQuizzesByUser, hideQuiz, quizIdByTitle, getQuizById };

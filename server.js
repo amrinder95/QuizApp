@@ -10,6 +10,8 @@ const answers = require("./db/queries/answers");
 const bodyParser = require("body-parser");
 const path = require("path");
 const session = require("express-session");
+const { getQuizzes } = require('./db/queries/quizzes');
+
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -53,6 +55,7 @@ if (process.env.NODE_ENV !== "testing") {
   const loginRoutes = require("./routes/login.js");
   const createQuizRoutes = require("./routes/create-quiz");
   const quizzesApiRoutes = require("./routes/quizzes-api");
+  const quizRoutes = require('./routes/quiz');
 
   app.use("/api/users", userApiRoutes);
   app.use("/api/widgets", widgetApiRoutes);
@@ -61,14 +64,22 @@ if (process.env.NODE_ENV !== "testing") {
   app.use("/login", loginRoutes);
   app.use("/create-quiz", createQuizRoutes);
   app.use("/api/quizzes", quizzesApiRoutes);
+  app.use('/', quizRoutes);
 }
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/", async (req, res) => {
+  try {
+    const quizzes = await getQuizzes();
+    
+    res.render("index", { quizzes });
+  } catch (error) {
+    console.error('Error fetching quizzes:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.get("/users", (req, res) => {

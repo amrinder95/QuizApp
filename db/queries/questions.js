@@ -30,4 +30,14 @@ const questionAnswer = (question) => {
   })
 }
 
-module.exports = { questionsForQuiz, createQuestion, questionAnswer }
+const getQuestionsByQuizId = (quiz_id) => {
+  return db.query('SELECT question, answer FROM questions WHERE quiz_id = $1', [quiz_id])
+    .then((data) => {
+      return data.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
+module.exports = { questionsForQuiz, createQuestion, questionAnswer, getQuestionsByQuizId }
