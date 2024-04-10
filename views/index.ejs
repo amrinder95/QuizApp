@@ -22,11 +22,21 @@
   <h1>Home</h1>
   <h2>Public Quizzes</h2>
   <div id="quiz-container"> <!-- Container to display quizzes -->
-  <% quizzes.forEach((quiz) => { %>
-    <div>
-      <a href="/quiz/<%= quiz.id %>"><%= quiz.title %></a>
-    </div>
+  <% if (!username) { %>
+    <p>Make an account to attempt</p>
+    <p>or login to create quizzes</p>
+    <% quizzes.forEach((quiz) => { %>
+      <div>
+        <h3="/quiz/<%= quiz.id %>"><%= quiz.title %></h3>
+      </div>
     <% }); %>
+  <% } else { %>
+    <% quizzes.forEach((quiz) => { %>
+      <div>
+        <a href="/quiz/<%= quiz.id %>"><%= quiz.title %></a>
+      </div>
+    <% }); %>
+  <% } %>
   </div>
   <script defer src="/scripts/app.js"></script>
 </body>
