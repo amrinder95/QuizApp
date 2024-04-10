@@ -4,9 +4,18 @@
         <div class="nav-container">
             <h1>QuizApp</h1>
             <a class="nav-item nav-link" href="/">Home</a>
+            <% if (!username) { %>
+                
             <a class="nav-item nav-link" href="/login">Login</a>
             <a class="nav-item nav-link" href="/register">Register</a>
+            <% } else { %>
+                <form method="POST" action="/logout">
+                    <button type="submit" class="btn btn-primary">Logout</button>
+                  </form>
+                  <span class="nav-item nav-link">Account: <%= username %></span>
             <a class="nav-item nav-link" href="/create-quiz">Create a Quiz</a>
+            <% } %>
+             
         </div>
     </nav>
 </header>

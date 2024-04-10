@@ -27,6 +27,8 @@ router.post("/", async (req, res) => {
     req.session.userId = user.id;
     req.session.username = username;
 
+    console.log("User logged in:", user);
+
     res.redirect("/");
   } catch (error) {
     console.error("Error loggin in user:", error);

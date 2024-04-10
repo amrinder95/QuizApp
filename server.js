@@ -57,6 +57,7 @@ if (process.env.NODE_ENV !== "testing") {
   const quizzesApiRoutes = require("./routes/quizzes-api");
   const quizRoutes = require('./routes/quiz');
   const myquizzesApiRoutes = require("./routes/myquizzes-api")
+  const logoutRoutes = require("./routes/logout");
 
   app.use("/api/users", userApiRoutes);
   app.use("/api/widgets", widgetApiRoutes);
@@ -67,6 +68,7 @@ if (process.env.NODE_ENV !== "testing") {
   app.use("/api/quizzes", quizzesApiRoutes);
   app.use('/', quizRoutes);
   app.use("/api/myquizzes", myquizzesApiRoutes);
+  app.use("/logout", logoutRoutes);
 }
 
 // Home page
@@ -76,8 +78,9 @@ if (process.env.NODE_ENV !== "testing") {
 app.get("/", async (req, res) => {
   try {
     const quizzes = await getQuizzes();
-    
-    res.render("index", { quizzes });
+    const username = req.session.username;
+
+    res.render("index", { quizzes, username });
   } catch (error) {
     console.error('Error fetching quizzes:', error);
     res.status(500).send('Internal Server Error');
