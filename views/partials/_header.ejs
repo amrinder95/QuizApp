@@ -6,8 +6,9 @@
             <a class="nav-item nav-link" href="/">Home</a>
             <a class="nav-item nav-link" href="/login">Login</a>
             <a class="nav-item nav-link" href="/register">Register</a>
-            <a class="nav-item nav-link" href="/create-quiz">Create a Quiz</a>
             <% if (typeof username !== 'undefined') { %>
+                <a class="nav-item nav-link" href="/create-quiz">Create a Quiz</a>
+                <a class="nav-item nav-link" href="/users">Your Quizzes</a>
                 <span class="user-info">Logged in: <%= username %></span>
                 <form action="/logout" method="POST" class="logout-form">
                     <button type="submit" class="nav-item nav-link logout-button">Logout</button>
