@@ -1,5 +1,6 @@
 .
 ├── README.md
+├── bin
 ├── db
 │   ├── connection.js
 │   ├── queries
@@ -23,6 +24,7 @@
 │       ├── 04_attempts.sql
 │       ├── 05_answers.sql
 │       └── 06_results.sql
+├── helpers.js
 ├── lib
 │   └── sass-middleware.js
 ├── package-lock.json
@@ -42,7 +44,10 @@
 ├── resetdb.js
 ├── routes
 │   ├── create-quiz.js
+│   ├── index.js
 │   ├── login.js
+│   ├── myquizzes-api.js
+│   ├── quiz.js
 │   ├── quizzes-api.js
 │   ├── register.js
 │   ├── users-api.js
@@ -53,14 +58,15 @@
 │   ├── header.scss
 │   ├── layout.scss
 │   └── main.scss
-├── tree_output.txt
+├── tree_structure.txt
 └── views
     ├── create-quiz.ejs
     ├── index.ejs
     ├── login.ejs
     ├── partials
     │   └── _header.ejs
+    ├── quiz.ejs
     ├── register.ejs
     └── users.ejs
 
-13 directories, 50 files
+14 directories, 55 files
