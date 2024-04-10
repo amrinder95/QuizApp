@@ -16,11 +16,15 @@ router.post("/", async (req, res) => {
       username,
       "quiz-title": title,
       question,
+      "question-A": option_a,
+      "question-B": option_b,
+      "question-C": option_c,
+      "question-D": option_d,
       "correct-answer": correctAnswers,
     } = req.body;
 
     console.log("Received request to create quiz with username:", username);
-
+    console.log(title, question, option_a,option_b,option_c, option_d, correctAnswers);
     const [user] = await users.getUserIdByUsername(username);
     console.log("Retrieved user:", user);
 
@@ -34,7 +38,7 @@ router.post("/", async (req, res) => {
     const quizId = await quizzes.quizIdByTitle(title);
 
     for (let i = 0; i < question.length; i++) {
-      await questions.createQuestion(quizId, question[i], correctAnswers[i]);
+      await questions.createQuestion(quizId, question[i], option_a[i], option_b[i], option_c[i], option_d[i], correctAnswers[i]);
     }
 
     res.render("index");

@@ -10,8 +10,8 @@ const questionsForQuiz = (title) => {
   })
 }
 
-const createQuestion = (quiz_id, question, answer) => {
-  return db.query('INSERT INTO questions (quiz_id, question, answer) VALUES ($1, $2, $3) RETURNING *', [quiz_id,question,answer])
+const createQuestion = (quiz_id, question, option_a, option_b, option_c, option_d, answer) => {
+  return db.query('INSERT INTO questions (quiz_id, question, option_a, option_b, option_c, option_d, answer) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', [quiz_id,question, option_a, option_b, option_c, option_d, answer])
   .then((data) => {
     return data.rows;
   })

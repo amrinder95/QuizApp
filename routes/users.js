@@ -19,13 +19,33 @@ router.post("/", async (req, res) => {
     users.getUserIdByUsername(username); // use when login is setup
     await quizzes.createQuiz(1, title); //for now hardcoding in userid
     const quizId = await quizzes.quizIdByTitle(title);
+    console.log(req.body);
     const questionsList = req.body["question"];
     const answersList = req.body["correct-answer"];
-    for (let i = 0; i < questionsList.length; i++) {
-      const question = questionsList[i];
-      const answer = answersList[i];
-      await questions.createQuestion(quizId, question, answer);
+    const option_aList = req.body["option_a"];
+    const option_bList = req.body["option_b"];
+    const option_cList = req.body["option_c"];
+    const option_dList = req.body["option_d"];
+    if (questionsList.length > 1) {
+      for (let i = 0; i < questionsList.length; i++) {
+        const question = questionsList[i];
+        const answer = answersList[i];
+        const option_a = option_aList[i];
+        const option_b = option_bList[i];
+        const option_c = option_cList[i];
+        const option_d = option_dList[i];
+        await questions.createQuestion(quizId, question, option_a, option_b, option_c, option_d, answer);
+      }
+    } else {
+      const question = questionsList;
+      const answer = answersList;
+      const option_a = option_aList;
+      const option_b = option_bList;
+      const option_c = option_cList[i];
+      const option_d = option_dList[i];
+      await questions.createQuestion(quizId, question, option_a, option_b, option_c, option_d, answer);
     }
+
     res.render("users");
   } catch (error) {
     console.log(error.message);
