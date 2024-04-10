@@ -22,6 +22,9 @@
 <body>
   <main>
         <h2 >Register</h2>
+        <% if (typeof error !== 'undefined') { %>
+          <p class="error"><%= error %></p>
+        <% } %>
         <form method="POST" action="/register">
           <div>
                 <label for="username">Username:</label>
