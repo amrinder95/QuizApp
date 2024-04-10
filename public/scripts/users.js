@@ -1,18 +1,30 @@
 // public/scripts/users.js
 // Client facing scripts here
 $(() => {
-  $('#fetch-users').on('click', () => {
+  $('#fetch-attempts').on('click', () => {
     $.ajax({
       method: 'GET',
       url: '/api/users'
     })
     .done((response) => {
-      const $usersList = $('#users');
-      $usersList.empty();
+      console.log("Response:")
+      console.log(response);
+      const $attemptsList = $('#attempts');
+      $attemptsList.empty();
 
-      for(const user of response.users) {
-        $(`<li class="user">`).text(user.name).appendTo($usersList);
+      if (response.attempts) {
+        for(const attempt of response.attempts) {
+          const { title, date} = attempt;
+          const formattedDate = new Date(date).toLocaleDateString();
+          const $attemptItem = $(`<li class="attempt">`).appendTo($attemptsList);
+          $attemptItem.text(`${title} - Date: ${formattedDate}`);
+        }
+      } else {
+        console.error('No attempts found in the response');
       }
+    })
+    .fail((xhr, status, error) => {
+      console. error('Error fetching attempts:', error)
     });
   });
 });

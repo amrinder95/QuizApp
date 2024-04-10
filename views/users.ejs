@@ -19,9 +19,19 @@
 </head>
 
 <body>
-  <h1>Users</h1>
-  <button id="fetch-users">Fetch Users via AJAX</button>
-  <ul id="users"></ul>
+  <h1>Your quizzes and attempts</h1>
+  <div class="your-quizzes">
+    <div class="quiz-info">
+      <a href="">QuizTitle</a>
+      <label class="switch">
+        Available to Public
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <button id="fetch-attempts">Show my recent attempts</button>
+  <ul id="attempts"></ul>
 </body>
 
 </html>

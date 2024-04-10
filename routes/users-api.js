@@ -9,12 +9,15 @@
 const express = require("express");
 const router = express.Router();
 const userQueries = require("../db/queries/users");
+const attemptQueries = require('../db/queries/attempts');
 
-router.get("/", (req, res) => {
-  userQueries
-    .getUsers()
-    .then((users) => {
-      res.json({ users });
+router.get("/", async (req, res) => {
+  // const username = req.session.username;
+  // const user_id = await userQueries.getUserIdByUsername(username);
+  attemptQueries
+    .getRecentAttempts(1)
+    .then((attempts) => {
+      res.json({ attempts });
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
