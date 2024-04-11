@@ -1,3 +1,4 @@
+// db/queries/questions.js
 const db = require('../connection');
 
 const questionsForQuiz = (quiz_id) => {

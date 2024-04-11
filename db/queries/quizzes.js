@@ -1,3 +1,4 @@
+// db/queries/quizzes.js
 const db = require('../connection');
 
 const createQuiz =  (user_id, title, unique_id) => {

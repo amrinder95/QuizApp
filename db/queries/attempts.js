@@ -1,3 +1,4 @@
+// db/queries/attempts.js
 const db = require('../connection');
 const users = require('./users');
 
