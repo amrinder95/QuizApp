@@ -10,9 +10,9 @@ $(document).ready(() => {
     $attemptsList.empty();
     if (response.attempts) {
       for(const attempt of response.attempts) {
-        const { title, date} = attempt;
+        const { id, title, date} = attempt;
         const formattedDate = new Date(date).toLocaleDateString();
-        const $attemptItem = $(`<li class="attempt">`).appendTo($attemptsList);
+        const $attemptItem = $(`<a href="attempts/${id}" class="attempt">`).appendTo($attemptsList);
         $attemptItem.text(`${title} - Date: ${formattedDate}`);
       }
     } else {

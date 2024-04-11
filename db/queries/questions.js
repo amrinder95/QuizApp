@@ -1,7 +1,7 @@
 const db = require('../connection');
 
-const questionsForQuiz = (title) => {
-  return db.query('SELECT question, answer FROM questions WHERE title = $1', [title])
+const questionsForQuiz = (quiz_id) => {
+  return db.query('SELECT question, answer FROM questions JOIN quizzes ON quiz_id = quizzes.id WHERE quiz_id = $1', [quiz_id])
   .then ((data) => {
     return data.rows;
   })

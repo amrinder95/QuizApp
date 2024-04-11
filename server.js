@@ -71,6 +71,7 @@ if (process.env.NODE_ENV !== "testing") {
   app.use("/api/myquizzes", myquizzesApiRoutes);
   app.use("/logout", logoutRoutes);
   app.use("/attempts", attemptsRoutes);
+
 }
 
 // Home page

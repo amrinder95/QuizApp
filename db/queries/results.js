@@ -11,7 +11,7 @@ const createResult = (attempt_id, score) => {
 }
 
 const getResultsByAttempt = (attempt_id) => {
-  return db.query('SELECT score FROM results WHERE attempt_id = $1', [attempt_id])
+  return db.query('SELECT score, attempts.date FROM results JOIN attempts on attempt_id = attempts.id WHERE attempt_id = $1', [attempt_id])
   .then((data) => {
     return data.rows;
   })

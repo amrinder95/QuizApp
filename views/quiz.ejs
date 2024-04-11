@@ -27,15 +27,15 @@
     </h2>
 
     <h3>Questions:</h3>
-    <form action="/attempts" method="POST" id="quiz-form">
+    <form action="/quiz/<%= quiz.id %>" method="POST" id="quiz-form">
     <div class="quiz-attempt-form">
-        <% questions.forEach(question=> { %>
+        <% questions.forEach((question, index) => { %>
             <div class="question-box">
-                <%= question.question %>
-                   <label><input type="radio" name="question1" value="A"><%= question.option_a %></label>
-                   <label><input type="radio" name="question1" value="B"><%= question.option_b %></label>
-                   <label><input type="radio" name="question1" value="C"><%= question.option_c %></label>
-                   <label><input type="radio" name="question1" value="D"><%= question.option_d %></label>
+                <p><strong>Question <%= index + 1 %>:</strong><%= question.question %></p>
+                   <label><input type="radio" name="question<%= index + 1 %>_answer" value="A"><%= question.option_a %></label>
+                   <label><input type="radio" name="question<%= index + 1 %>_answer" value="B"><%= question.option_b %></label>
+                   <label><input type="radio" name="question<%= index + 1 %>_answer" value="C"><%= question.option_c %></label>
+                   <label><input type="radio" name="question<%= index + 1 %>_answer" value="D"><%= question.option_d %></label>
             </div>
                     <% }); %>
 
