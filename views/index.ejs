@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-
+  
   <script src="/vendor/jquery-3.0.0.js"></script>
 </head>
 
@@ -22,11 +22,12 @@
   <h1>Home</h1>
   <h2>Public Quizzes</h2>
   <div id="quiz-container"> <!-- Container to display quizzes -->
+    <h2>Public Quizzes</h2>
   <% if (!username) { %>
     <p>Make an account to attempt</p>
     <p>or login to create quizzes</p>
     <% quizzes.forEach((quiz) => { %>
-      <div>
+      <div class = "NAquiz">
         <h3="/quiz/<%= quiz.id %>"><%= quiz.title %></h3>
       </div>
     <% }); %>
