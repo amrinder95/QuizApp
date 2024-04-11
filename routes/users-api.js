@@ -11,6 +11,8 @@ const router = express.Router();
 const userQueries = require("../db/queries/users");
 const attemptQueries = require('../db/queries/attempts');
 
+//gets recent attempts
+
 router.get("/", async (req, res) => {
   const username = req.session.username;
   try{

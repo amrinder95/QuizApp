@@ -31,7 +31,7 @@ const questionAnswer = (question) => {
 }
 
 const getQuestionsByQuizId = (quiz_id) => {
-  return db.query('SELECT question, answer FROM questions WHERE quiz_id = $1', [quiz_id])
+  return db.query('SELECT question, option_a, option_b, option_c, option_d, answer FROM questions WHERE quiz_id = $1', [quiz_id])
     .then((data) => {
       return data.rows;
     })

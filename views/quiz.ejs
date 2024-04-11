@@ -27,15 +27,21 @@
     </h2>
 
     <h3>Questions:</h3>
-    <ul>
+    <form action="/attempts" method="POST" id="quiz-form">
+    <div class="quiz-attempt-form">
         <% questions.forEach(question=> { %>
-            <li>
+            <div class="question-box">
                 <%= question.question %>
-                   <p>Correct Answer: <%= question.answer %></p>
-                </li>
+                   <label><input type="radio" name="question1" value="A"><%= question.option_a %></label>
+                   <label><input type="radio" name="question1" value="B"><%= question.option_b %></label>
+                   <label><input type="radio" name="question1" value="C"><%= question.option_c %></label>
+                   <label><input type="radio" name="question1" value="D"><%= question.option_d %></label>
+            </div>
                     <% }); %>
 
-    </ul>
+    </div>
+    <button type="submit" id="submit-btn">Submit</button>
+  </form>
 </body>
 
 </html>

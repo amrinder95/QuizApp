@@ -1,5 +1,7 @@
 // public/scripts/app.js
 // Client facing scripts here
+const { questions } = require('.../db/queries/questions');
+const { quizzes } = require('.../db/queries/quizzes');
 
 // add a new question button
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,3 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// const questionsAndAnswers = await questions.questionsForQuiz();
+// document.getElementById('quiz-form').addEventListener('submit'), function(event) {
+//   event.preventDefault();
+
+//   const selectedAnswers
+// }
+

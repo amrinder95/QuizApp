@@ -58,6 +58,7 @@ if (process.env.NODE_ENV !== "testing") {
   const quizRoutes = require('./routes/quiz');
   const myquizzesApiRoutes = require("./routes/myquizzes-api")
   const logoutRoutes = require("./routes/logout");
+  const attemptsRoutes = require("./routes/attempts");
 
   app.use("/api/users", userApiRoutes);
   app.use("/api/widgets", widgetApiRoutes);
@@ -69,6 +70,7 @@ if (process.env.NODE_ENV !== "testing") {
   app.use('/', quizRoutes);
   app.use("/api/myquizzes", myquizzesApiRoutes);
   app.use("/logout", logoutRoutes);
+  app.use("/attempts", attemptsRoutes);
 }
 
 // Home page
