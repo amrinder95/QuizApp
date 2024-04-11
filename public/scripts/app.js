@@ -1,12 +1,12 @@
 // public/scripts/app.js
 // Client facing scripts here
-import { questionsForQuiz } from '../db/queries/questions';
+//import { questionsForQuiz } from '../db/queries/questions';
 
 // add a new question button
 document.addEventListener("DOMContentLoaded", () => {
   const addQuestionBtn = document.getElementById("add-question-btn");
   const questionsContainer = document.getElementById("questions-container");
-  const submitBtn = document.querySelector("button[type='submit']");
+  const submitBtn = document.querySelector("button[id='submit-btn']");
 
   if (addQuestionBtn && questionsContainer) {
     addQuestionBtn.addEventListener("click", () => {

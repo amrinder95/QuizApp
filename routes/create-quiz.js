@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
     await quizzes.createQuiz(userId, title, unique_id);
     const quizId = await quizzes.quizIdByTitle(title);
 
-    if (question.length = 1) {
+    if (question.length === 1) {
       await questions.createQuestion(quizId, question, option_a, option_b, option_c, option_d, correctAnswers);
     } else {
       for (let i = 0; i < question.length; i++) {
