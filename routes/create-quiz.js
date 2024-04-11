@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
 
     const unique_id = generateRandomString();
 
-    await quizzes.createQuiz(userId, title, quiz_id);
+    await quizzes.createQuiz(userId, title, unique_id);
     const quizId = await quizzes.quizIdByTitle(title);
 
     if (question.length = 1) {
