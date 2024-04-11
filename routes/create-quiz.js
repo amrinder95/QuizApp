@@ -50,7 +50,7 @@ router.post("/", async (req, res) => {
 
     const allQuizzes = await quizzes.getQuizzes();
 
-    res.render("index", { quizzes: allQuizzes});
+    res.render("index", { quizzes: allQuizzes, username: req.session.username});
   } catch (error) {
     console.error("Error creating quiz:", error);
     res.status(500).send("Internal Server Error!");
