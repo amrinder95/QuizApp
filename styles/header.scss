@@ -1,0 +1,22 @@
+h1 {
+    display: inline-flex;
+    font-family: "Dangrek", sans-serif;
+    color: #fff !important;
+    text-shadow: 0 0 10px #00000081;
+  }
+  
+  nav {
+    background-color: #3D423E;
+    justify-content: space-between;
+    padding: 25px;
+    box-shadow: 0 0 10px #0000001d;
+  }
+  
+  .nav-item.nav-link {
+    color: white;
+    font-family: "Dangrek", sans-serif;
+    margin: auto;
+    margin: 1%;
+    display: inline-block;
+    text-decoration: none;
+  }
