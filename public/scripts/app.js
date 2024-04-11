@@ -1,7 +1,6 @@
 // public/scripts/app.js
 // Client facing scripts here
-const { questions } = require('.../db/queries/questions');
-const { quizzes } = require('.../db/queries/quizzes');
+import { questionsForQuiz } from '../db/queries/questions';
 
 // add a new question button
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,10 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// const questionsAndAnswers = await questions.questionsForQuiz();
-// document.getElementById('quiz-form').addEventListener('submit'), function(event) {
-//   event.preventDefault();
+document.getElementById('quiz-form').addEventListener('submit', async function(event) {
+  event.preventDefault();
 
-//   const selectedAnswers
-// }
+try {
+  const questions = await questionsForQuiz();
+  console.log(questions);
+} catch (error) {
+  console.error('Error fetching questions:', error);
+}
+});
+
+ /*const questionsAndAnswers = await questions.questionsForQuiz();
+ document.getElementById('quiz-form').addEventListener('submit'), function(event) {
+   event.preventDefault();
+
+   const selectedAnswers
+ }*/
 
