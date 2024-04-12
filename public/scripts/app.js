@@ -1,6 +1,6 @@
 // public/scripts/app.js
 // Client facing scripts here
-//import { questionsForQuiz } from '../db/queries/questions';
+import { questionsForQuiz } from '../db/queries/questions';
 
 // add a new question button
 document.addEventListener("DOMContentLoaded", () => {
