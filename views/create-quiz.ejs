@@ -23,22 +23,37 @@
     <h1>Create a new quiz</h1>
     <form action="/create-quiz" method="POST" class="quiz-questions"> <!--Posts to user for now i'll set a route and logic for public vs private quizzes-->
       <input type="hidden" name="username" value="<%= username %>" /> <!--store username here, TODO session cookies-->
-
+      <div class="qt">
     <label for="quiz-title" class="quiz-title">Quiz title:</label>
-    <input type="text" id="quiz-title" name="quiz-title"><br>
+    <input type="text" id="quiz-title" name="quiz-title">
+  </div>
 
       <div id="questions-container">
+        <div class="mb-4">
         <label for="question" class="question-title">Question:</label>
-        <input type="text" name="question"><br>
+        <input type="text" name="question">
+      </div>
+
+      <div class="mb-2">
         <label for="question-A" class="question-label">Answer A:</label>
-        <input type="text" name="question-A"><br>
+        <input type="text" name="question-A">
+      </div>
+
+      <div class="mb-2">
         <label for="question-B" class="question-label">Answer B:</label>
-        <input type="text" name="question-B"><br>
+        <input type="text" name="question-B">
+      </div>
+      
+      <div class="mb-2">
         <label for="question-C" class="question-label">Answer C:</label>
-        <input type="text" name="question-C"><br>
+        <input type="text" name="question-C">
+      </div>
+
+      <div class="mb-2">
         <label for="question-D" class="question-label">Answer D:</label>
-        <input type="text" name="question-D"><br>
-        
+        <input type="text" name="question-D">
+      </div>
+        <div class ="mb-2">
         <label for="question-answer">Correct Answer:</label>
         <select name="correct-answer" id="question-answer">
           <option value="A">A</option>
@@ -46,6 +61,7 @@
           <option value="C">C</option>
           <option value="D">D</option>
         </select>
+         </div> 
       </div>
     
     
