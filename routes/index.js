@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { getQuizzes } = require('../db/queries/quizzes');
 
+
 router.get('/', async (req, res) => {
     try {
         const quizzes = await getQuizzes();

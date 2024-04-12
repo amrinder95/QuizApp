@@ -19,21 +19,25 @@
 </head>
 
 <body>
-  <main>
-        <h2 >Register</h2>
-        <% if (typeof error !== 'undefined') { %>
-          <p class="error"><%= error %></p>
-        <% } %>
-        <form method="POST" action="/register">
-          <div>
-                <label for="username">Username:</label>
-                <input type="text" name="username" required>
-          </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" name="password" required>
-            </div>
-            <button type="submit">Register</button>
-        </form>
+  <main class="form-signin w-100 m-auto">
+
+    <form method="POST" action="/register">
+      <h1 class="h3 mb-3 fw-normal">Register:</h1>
+      <% if (typeof error !== 'undefined') { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+  
+      <div class="form-floating">
+        <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+        <label for="username">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="password">Password</label>
+      </div>
+  
+      <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    </form>
+  </main>
 </body>
 </html>

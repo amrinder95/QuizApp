@@ -19,8 +19,8 @@
 </head>
 
 <body>
-  <h1>Create A New Quiz!</h1>
   <div id="new-quiz-form">
+    <h1>Create a new quiz</h1>
     <form action="/create-quiz" method="POST" class="quiz-questions"> <!--Posts to user for now i'll set a route and logic for public vs private quizzes-->
       <input type="hidden" name="username" value="<%= username %>" /> <!--store username here, TODO session cookies-->
 
