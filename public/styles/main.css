@@ -1,152 +1,152 @@
- html, body {
-    margin: 0px;
-    height: 100%;
-    background-image: linear-gradient(to left,rgb(63, 57, 53), rgb(49, 47, 41));
+html, body {
+  margin: 0px;
+  height: 100%;
+  background-image: linear-gradient(to left,rgb(63, 57, 53), rgb(49, 47, 41));
 }
 
 #quiz-container {
-    margin: 10% 5%;
-    padding: 5%;
-    text-align: center;
-    background-color: #35463E;
-    border-radius: 18px;
-    padding-bottom: 15%;
-    box-shadow: 0 0 10px #0000003e;
+  margin: 10% 5%;
+  padding: 5%;
+  text-align: center;
+  background-color: #35463E;
+  border-radius: 18px;
+  padding-bottom: 15%;
+  box-shadow: 0 0 10px #0000003e;
 }
 
 .NAquiz {
-    color: #fff;
-    margin: 2%;
-    font-family: "Architects Daughter", cursive;
-    font-size: 24px;
-    filter: blur(0.2rem);
+  color: #fff;
+  margin: 2%;
+  font-family: "Architects Daughter", cursive;
+  font-size: 24px;
+  filter: blur(0.2rem);
 }
 
 .quiz {
-    color: #fff;
-    margin-top: 6%;
-    font-family: "Architects Daughter", cursive;
-    font-size: 24px;
+  color: #fff;
+  margin-top: 6%;
+  font-family: "Architects Daughter", cursive;
+  font-size: 24px;
 }
 
 a {
-    color: #fff;
-    display: inline-flex;
+  color: #fff;
+  display: inline-flex;
 }
 
 .form-signin {
-    max-width: 330px;
-    padding: 1rem;
-  }
-  
-  .form-signin .form-floating:focus-within {
-    z-index: 2;
-  }
-  
-  .form-signin input[type="email"] {
-    margin-bottom: 2px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  
-  .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
+  max-width: 330px;
+  padding: 1rem;
+}
 
-  .publicQuizzes {
-    display: flow-root;
-    margin-bottom: 5%;
-    padding: 5%;
-    background-color: #28352f;
-    border-radius: 18px;
-    box-shadow: inset 0 0 10px #0000001d;
-  }
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 2px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.publicQuizzes {
+  display: flow-root;
+  margin-bottom: 5%;
+  padding: 5%;
+  background-color: #28352f;
+  border-radius: 18px;
+  box-shadow: inset 0 0 10px #0000001d;
+}
 
 .your-quizzes {
-    background-color: #35463E;
-    padding: 5%;
-    border-radius: 14px;
-    box-shadow: 0 0 10px #0000001d;
-    margin: 10% 5%;
+  background-color: #35463E;
+  padding: 5%;
+  border-radius: 14px;
+  box-shadow: 0 0 10px #0000001d;
+  margin: 10% 5%;
 }
 
 .quiz-info {
-    text-align: center;
-    background-color: #28352f;
-    padding: 40px;
-    margin-top: 7% !important;
-    border-radius: 14px;
-    box-shadow: inset 0 0 10px #0000001d;
+  text-align: center;
+  background-color: #28352f;
+  padding: 40px;
+  margin-top: 7% !important;
+  border-radius: 14px;
+  box-shadow: inset 0 0 10px #0000001d;
 }
 .your-attempts {
-    
-    text-align: center;
-    background-color: #28352f;
-    padding: 40px;
-    margin-top: 7% !important;
-    border-radius: 14px;
-    box-shadow: inset 0 0 10px #0000001d;
+
+  text-align: center;
+  background-color: #28352f;
+  padding: 40px;
+  margin-top: 7% !important;
+  border-radius: 14px;
+  box-shadow: inset 0 0 10px #0000001d;
 }
 
 .quiz-questions {
-    text-align: center;
-    background-color: #28352f;
-    color:#fff;
-    padding: 40px;
-    margin-top: 7% !important;
-    border-radius: 14px;
-    box-shadow: inset 0 0 10px #0000001d;
+  text-align: center;
+  background-color: #28352f;
+  color:#fff;
+  padding: 40px;
+  margin-top: 7% !important;
+  border-radius: 14px;
+  box-shadow: inset 0 0 10px #0000001d;
 }
 
 #quiz-title {
-    background-color: transparent;
-    color: #fff;
+  background-color: transparent;
+  color: #fff;
 }
 
 .quiz-title {
-    color: #fff;
-    font-family: "Architects Daughter", cursive;
-    font-size: 45px;
-    margin-bottom: 15px;
+  color: #fff;
+  font-family: "Architects Daughter", cursive;
+  font-size: 45px;
+  margin-bottom: 15px;
 }
 
 .question-title {
-    color: #fff;
-    font-family: "Architects Daughter", cursive;
-    font-size: 24px;
+  color: #fff;
+  font-family: "Architects Daughter", cursive;
+  font-size: 24px;
 }
 
 .question-label {
-   color: #fff;
-   font-size: 18px;
-   font-family: "Architects Daughter", cursive;
+ color: #fff;
+ font-size: 18px;
+ font-family: "Architects Daughter", cursive;
 }
 
 #quiz-form {
-    border-radius: 18px;
-    margin: 8%;
-    background-color: #35463E;
-    text-align: center;
-    padding: 40px;
-    color: #fff;
-    box-shadow: 0 0 10px #0000001d;
+  border-radius: 18px;
+  margin: 8%;
+  background-color: #35463E;
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+  box-shadow: 0 0 10px #0000001d;
 }
 
 .quiz-options {
-    display: inline-flex;
-    border-radius: 18px;
-    background-color: #252e2a;
-    text-align: center;
-    padding: 40px;
-    color: #fff;
-    margin: 10px;
-    box-shadow: inset 0 0 10px #0000001d;
+  display: inline-flex;
+  border-radius: 18px;
+  background-color: #252e2a;
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+  margin: 10px;
+  box-shadow: inset 0 0 10px #0000001d;
 }
 
 .form-floating>label {
-    color: #282828;
+  color: #282828;
 }
 
 
