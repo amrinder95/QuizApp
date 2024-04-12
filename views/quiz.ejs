@@ -6,42 +6,52 @@
 <head>
   <%- include('partials/_header') %>
   <title>Quiz Details</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="stylesheet" href="/vendor/border-box.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
 
-    <script src="/vendor/jquery-3.0.0.js"></script>
-    <script defer src="/scripts/app.js"></script>
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
 
 </head>
 
 <body>
-    <form action="/quiz/<%= quiz.id %>" method="POST" id="quiz-form">
+  <form action="/quiz/<%= quiz.id %>" method="POST" id="quiz-form">
     <div class="quiz-attempt-form">
       <h1>
-          <%= quiz.title %>
+        <%= quiz.title %>
       </h1>
-        <% if (questions && questions.length) { %>
-          <% for (let index = 0; index < questions.length; index++) { %>
-            <% const question = questions[index]; %>
-            <div class="question-box">
-                <p><strong>Question <%= index + 1 %>:  </strong><%= question.question %></p>
-                <div class="quiz-options">
-                   <label><input type="radio" name="question<%= index + 1 %> _answer" value="A"><%= question.option_a %></label>
-                   <label><input type="radio" name="question<%= index + 1 %> _answer" value="B"><%= question.option_b %></label>
-                   <label><input type="radio" name="question<%= index + 1 %> _answer" value="C"><%= question.option_c %></label>
-                   <label><input type="radio" name="question<%= index + 1 %> _answer" value="D"><%= question.option_d %></label>
-                   </div>
-            </div>
-                   <% } %>
-    <% } else { %>
-        <p>No questions found.</p>
-    <% } %>
+      <% if (questions && questions.length) { %>
+      <% for (let index=0; index < questions.length; index++) { %>
+      <% const question=questions[index]; %>
+      <div class="question-box">
+        <p><strong>Question <%= index + 1 %>: </strong>
+          <%= question.question %>
+        </p>
+        <div class="quiz-options">
+          <label><input type="radio" name="question<%= index + 1 %> _answer" value="A">
+            <%= question.option_a %>
+          </label>
+          <label><input type="radio" name="question<%= index + 1 %> _answer" value="B">
+            <%= question.option_b %>
+          </label>
+          <label><input type="radio" name="question<%= index + 1 %> _answer" value="C">
+            <%= question.option_c %>
+          </label>
+          <label><input type="radio" name="question<%= index + 1 %> _answer" value="D">
+            <%= question.option_d %>
+          </label>
+        </div>
+      </div>
+      <% } %>
+      <% } else { %>
+      <p>No questions found.</p>
+      <% } %>
 
     </div>
     <button type="submit" id="submit-btn">Submit</button>

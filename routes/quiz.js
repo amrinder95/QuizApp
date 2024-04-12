@@ -1,29 +1,29 @@
 // routes/quiz.js
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { getQuizById } = require('../db/queries/quizzes');
-const { getQuestionsByQuizId } = require('../db/queries/questions');
-const { createAttempt } = require('../db/queries/attempts');
-const { getUserIdByUsername } = require('../db/queries/users');
-const { createResult } = require('../db/queries/results');
-const { questionsForQuiz } = require( '../db/queries/questions');
+const { getQuizById } = require("../db/queries/quizzes");
+const { getQuestionsByQuizId } = require("../db/queries/questions");
+const { createAttempt } = require("../db/queries/attempts");
+const { getUserIdByUsername } = require("../db/queries/users");
+const { createResult } = require("../db/queries/results");
+const { questionsForQuiz } = require("../db/queries/questions");
 
-router.get('/quiz/:id', async (req, res) => {
-    const id = req.params.id;
-    const username = req.session.username;
-    try {
-        const quiz = await getQuizById(id);
-        const questions = await getQuestionsByQuizId(id);
+router.get("/quiz/:id", async (req, res) => {
+  const id = req.params.id;
+  const username = req.session.username;
+  try {
+    const quiz = await getQuizById(id);
+    const questions = await getQuestionsByQuizId(id);
 
-        res.render('quiz', { quiz, questions, username });
-    } catch (error) {
-        console.error('Error fetching quiz by ID:', error);
-        res.status(500).send('Internal Server Error');
-    }
+    res.render("quiz", { quiz, questions, username });
+  } catch (error) {
+    console.error("Error fetching quiz by ID:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
-router.post('/quiz/:id', async (req, res) => {
+router.post("/quiz/:id", async (req, res) => {
   let answers = [];
   for (let questionAnswer in req.body) {
     answers.push(req.body[questionAnswer]);
@@ -32,9 +32,9 @@ router.post('/quiz/:id', async (req, res) => {
   let score = 0;
   try {
     const questions = await getQuestionsByQuizId(quiz_id);
-    for(let i = 0; i < questions.length; i++){
+    for (let i = 0; i < questions.length; i++) {
       if (questions[i].answer === answers[i]) {
-        score ++;
+        score++;
       }
     }
     const username = req.session.username;
@@ -44,11 +44,11 @@ router.post('/quiz/:id', async (req, res) => {
     const attempt = attemptObject[0].id;
     const result = await createResult(attempt, score);
   } catch (error) {
-    console.error('Error submitted', error);
-    res.status(500).send('Internal Server Error');
+    console.error("Error submitted", error);
+    res.status(500).send("Internal Server Error");
   }
 
-res.redirect('/users');
-})
+  res.redirect("/users");
+});
 
 module.exports = router;

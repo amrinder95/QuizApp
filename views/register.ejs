@@ -6,9 +6,9 @@
   <%- include('partials/_header')%>
   <title>Register</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
@@ -23,10 +23,12 @@
 
     <form method="POST" action="/register">
       <h1 class="h3 mb-3 fw-normal">Register:</h1>
-      <% if (typeof error !== 'undefined') { %>
-        <p class="error"><%= error %></p>
+      <% if (typeof error !=='undefined' ) { %>
+      <p class="error">
+        <%= error %>
+      </p>
       <% } %>
-  
+
       <div class="form-floating">
         <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com" required>
         <label for="username">Username</label>
@@ -35,9 +37,10 @@
         <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="password">Password</label>
       </div>
-  
+
       <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
     </form>
   </main>
 </body>
+
 </html>

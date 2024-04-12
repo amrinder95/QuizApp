@@ -10,8 +10,7 @@ const answers = require("./db/queries/answers");
 const bodyParser = require("body-parser");
 const path = require("path");
 const session = require("express-session");
-const { getQuizzes } = require('./db/queries/quizzes');
-
+const { getQuizzes } = require("./db/queries/quizzes");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -55,8 +54,8 @@ if (process.env.NODE_ENV !== "testing") {
   const loginRoutes = require("./routes/login.js");
   const createQuizRoutes = require("./routes/create-quiz");
   const quizzesApiRoutes = require("./routes/quizzes-api");
-  const quizRoutes = require('./routes/quiz');
-  const myquizzesApiRoutes = require("./routes/myquizzes-api")
+  const quizRoutes = require("./routes/quiz");
+  const myquizzesApiRoutes = require("./routes/myquizzes-api");
   const logoutRoutes = require("./routes/logout");
   const attemptsRoutes = require("./routes/attempts");
 
@@ -67,11 +66,10 @@ if (process.env.NODE_ENV !== "testing") {
   app.use("/login", loginRoutes);
   app.use("/create-quiz", createQuizRoutes);
   app.use("/api/quizzes", quizzesApiRoutes);
-  app.use('/', quizRoutes);
+  app.use("/", quizRoutes);
   app.use("/api/myquizzes", myquizzesApiRoutes);
   app.use("/logout", logoutRoutes);
   app.use("/attempts", attemptsRoutes);
-
 }
 
 // Home page
@@ -85,8 +83,8 @@ app.get("/", async (req, res) => {
 
     res.render("index", { quizzes, username });
   } catch (error) {
-    console.error('Error fetching quizzes:', error);
-    res.status(500).send('Internal Server Error');
+    console.error("Error fetching quizzes:", error);
+    res.status(500).send("Internal Server Error");
   }
 });
 

@@ -4,15 +4,19 @@ const bcrypt = require("bcrypt");
 
 const createUser = async (username, password) => {
   try {
-    const existingUser = await db.query('SELECT * FROM users WHERE username = $1', [username]);
+    const existingUser = await db.query(
+      "SELECT * FROM users WHERE username = $1",
+      [username]
+    );
     if (existingUser.rows.length > 0) {
-      return { error: 'Username already in use!'} // stop regisistration if user already exists
+      return { error: "Username already in use!" };
     }
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const sql = "INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *";
+    const sql =
+      "INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *";
     const values = [username, hashedPassword];
     const data = await db.query(sql, values);
 
@@ -51,11 +55,13 @@ const getUserIdByUsername = (username) => {
 
 const getUserId = async (username) => {
   try {
-    const result = await db.query('SELECT id FROM users WHERE username = $1', [username]);
+    const result = await db.query("SELECT id FROM users WHERE username = $1", [
+      username,
+    ]);
     if (result.rows.length > 0) {
-      return result.rows[0].id; // Return only the user ID
+      return result.rows[0].id;
     } else {
-      return null; // User not found
+      return null;
     }
   } catch (error) {
     console.error(error.message);

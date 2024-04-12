@@ -12,13 +12,13 @@ h2 {
     color: #fff !important;
     float: left;
     text-shadow: 0 0 10px #00000081;
-  }
+}
 
-  h3 {
+h3 {
     text-align: center;
     font-family: "Dangrek", sans-serif;
     color: #fff !important;
-  }
+}
 
 h5 {
     display: inline-flex;
@@ -39,7 +39,7 @@ h5 {
 
 label {
     font-size: 18px;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 .quiz {

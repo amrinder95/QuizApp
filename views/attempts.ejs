@@ -6,9 +6,9 @@
   <%- include('partials/_header') %>
   <title>Quiz Results</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
@@ -18,10 +18,10 @@
 </head>
 
 <body>
-  <div class ="attempts">
+  <div class="attempts">
     <h2 class="tl">Title: <%= quiz.title %></h2>
-    <h1 class ="qr">Quiz results:</h1>
-    <h2 class ="sc">Score: <%= score.score %> out of <%= questions.length%></h2>
+    <h1 class="qr">Quiz results:</h1>
+    <h2 class="sc">Score: <%= score.score %> out of <%= questions.length%></h2>
     <h2 class="urs">User: <%= user.username %></h2>
     <h2 class="dt">Date: <%= formattedDate %></h2>
   </div>

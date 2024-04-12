@@ -1,21 +1,62 @@
 .form-signin {
-    background-color: #35463E;
-    padding: 40px;
-    margin-top: 10% !important;
-    border-radius: 14px;
-    box-shadow: 0 0 10px #0000001d;
+  background-color: #35463e;
+  padding: 40px;
+  margin-top: 10% !important;
+  border-radius: 14px;
+  box-shadow: 0 0 10px #0000001d;
 }
 
 h2 {
-    display: inline-flex;
-    font-family: "Dangrek", sans-serif;
-    color: #fff !important;
-    float: left;
-  }
+  display: inline-flex;
+  font-family: "Dangrek", sans-serif;
+  color: #fff !important;
+  float: left;
+  text-shadow: 0 0 10px #00000081;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Dangrek", sans-serif;
+  color: #fff !important;
+}
 
 h5 {
-    display: inline-flex;
-    font-family: "Architects Daughter", cursive;
-    color: #fff !important;
-    float: right;
+  display: inline-flex;
+  font-family: "Architects Daughter", cursive;
+  color: #fff !important;
+  float: right;
+}
+
+#new-quiz-form {
+  text-align: center;
+  padding: 5%;
+  color: #fff;
+  background-color: #35463e;
+  border-radius: 14px;
+  margin: 5% 10%;
+  box-shadow: 0 0 10px #0000001d;
+}
+
+label {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.quiz {
+  color: #fff;
+  margin-top: 8%;
+  font-family: "Architects Daughter", cursive;
+  font-size: 24px;
+}
+
+input {
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+}
+
+p {
+  font-size: 26px;
+  margin: 5%;
+  font-family: "Architects Daughter", cursive;
 }
