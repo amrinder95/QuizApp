@@ -21,23 +21,22 @@
 </head>
 
 <body>
-    <h1>Quiz Details</h1>
-    <h2>
-        <%= quiz.title %>
-    </h2>
-
-    <h3>Questions:</h3>
     <form action="/quiz/<%= quiz.id %>" method="POST" id="quiz-form">
     <div class="quiz-attempt-form">
+      <h1>
+          <%= quiz.title %>
+      </h1>
         <% if (questions && questions.length) { %>
           <% for (let index = 0; index < questions.length; index++) { %>
             <% const question = questions[index]; %>
             <div class="question-box">
-                <p><strong>Question <%= index + 1 %>:</strong><%= question.question %></p>
-                   <label><input type="radio" name="question<%= index + 1 %>_answer" value="A"><%= question.option_a %></label>
-                   <label><input type="radio" name="question<%= index + 1 %>_answer" value="B"><%= question.option_b %></label>
-                   <label><input type="radio" name="question<%= index + 1 %>_answer" value="C"><%= question.option_c %></label>
-                   <label><input type="radio" name="question<%= index + 1 %>_answer" value="D"><%= question.option_d %></label>
+                <p><strong>Question <%= index + 1 %>:  </strong><%= question.question %></p>
+                <div class="quiz-options">
+                   <label><input type="radio" name="question<%= index + 1 %> _answer" value="A"><%= question.option_a %></label>
+                   <label><input type="radio" name="question<%= index + 1 %> _answer" value="B"><%= question.option_b %></label>
+                   <label><input type="radio" name="question<%= index + 1 %> _answer" value="C"><%= question.option_c %></label>
+                   <label><input type="radio" name="question<%= index + 1 %> _answer" value="D"><%= question.option_d %></label>
+                   </div>
             </div>
                    <% } %>
     <% } else { %>

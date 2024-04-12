@@ -7,6 +7,7 @@ const { getQuestionsByQuizId } = require('../db/queries/questions');
 const { createAttempt } = require('../db/queries/attempts');
 const { getUserIdByUsername } = require('../db/queries/users');
 const { createResult } = require('../db/queries/results');
+const { questionsForQuiz } = require( '../db/queries/questions');
 
 router.get('/quiz/:id', async (req, res) => {
     const id = req.params.id;
